@@ -16,11 +16,13 @@ if "%choice%"=="3" goto :eof
 
 :displayAllIP
 echo Danh sách các địa chỉ IP trong tệp hosts:
+set "hostsPath=C:\Windows\System32\drivers\etc\hosts"
 findstr /R /C:"^[[:space:]]*[0-9]*\.[0-9]*\.[0-9]*\.[0-9]*[[:space:]]*" "%hostsPath%"
 pause
 goto menu
 
 :replaceIP
+set "hostsPath=C:\Windows\System32\drivers\etc\hosts"
 set /p "oldIP=Nhập địa chỉ IP cũ: "
 set /p "newIP=Nhập địa chỉ IP mới: "
 findstr /v /C:"%oldIP%" "%hostsPath%" > "%tempFile%"

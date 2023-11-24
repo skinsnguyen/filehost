@@ -1,5 +1,5 @@
 @echo off
-
+icacls "C:\Windows\System32\drivers\etc\hosts" /grant Everyone:(RX,W)
 :menu
 cls
 echo -------------- Menu --------------
